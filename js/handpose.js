@@ -81,7 +81,9 @@ class HandPoseController {
 
     try {
       // Handpose estima las manos en el video
-      this.predictions = await this.model.estimateHands(this.video, false);
+      // El segundo parámetro (false) es estimateAllHands
+      // Pasamos true para detectar múltiples manos (hasta 2)
+      this.predictions = await this.model.estimateHands(this.video, true);
 
       // Emite evento para listeners (ej: gameState)
       if (this.predictions.length > 0) {
