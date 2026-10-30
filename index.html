@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- p5.js (debe ser primero) -->
     <script src="https://cdn.jsdelivr.net/npm/p5@2.3.3/lib/p5.min.js"></script>
-    <script src="/js/gamelogic.js"></script>
-    <script src="/js/handpose.js"></script>
-    <script src="/js/ui.js"></script>
-    <script src="/js/sketch.js"></script>
-    <title>Document</title>
+    
+    <!-- TensorFlow.js (base para modelos) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0"></script>
+    
+    <!-- Handpose (detección de manos - Google) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose@0.0.7"></script>
+    
+    <!-- Nuestros módulos en orden: Model → Controller → View → Main -->
+    <script src="js/gamelogic.js"></script>
+    <script src="js/handpose.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="sketch.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Hand Pose Game</title>
 </head>
 <body>
-    
+    <!-- Video elemento para captura de manos (oculto, solo usado por ml5.js) -->
+    <video id="video" style="display:none; width:640px; height:480px;"></video>
 </body>
 </html>
